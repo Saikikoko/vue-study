@@ -44,11 +44,14 @@ export default {
   methods: {
     submit() {
       this.$refs.form.validate((valid) => {
-        if(valid) {
-          alert('校验成功')
-        } else {
-          alert('校验失败')
-        }
+        // if(valid) {
+        //   alert('校验成功')
+        // } else {
+        //   alert('校验失败')
+        // }
+        this.$message({
+          message: valid ? '校验成功' : '校验失败'
+        })
       })
     }
   },
