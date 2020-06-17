@@ -1,31 +1,14 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <button @click="add">click</button>
-    <!-- event bus -->
-    <Child1/>
-    <Child2 msg="hello child2" v-on="$listeners" warn="ward" />  
-    <Comp>
-      <!-- 默认插槽 -->
-      <template v-slot:default="slotProps">默认插槽{{slotProps.msg}}</template>
-      <br>
-      <!-- 具名插槽 -->
-      <template v-slot:foo>具名插槽</template>
-    </Comp>
+    <h1>{{ foo }}</h1>
   </div>
 </template>
 
 <script>
-import Child1 from './communication/Child1'
-import Child2 from './communication/Child2'
-import Comp from './slotPage/Comp.vue'
 
 export default {
   name: 'HelloWorld',
   components: {
-    Child1,
-    Child2,
-    Comp,
   },
   provide() {
     return {
@@ -36,18 +19,13 @@ export default {
     msg: String
   },
   created () {
-    // $children
-    console.log(this.$children)
-    console.log(this.$listeners);
     
   },
   mounted () {
-    console.log(this.$children)
+    
   },
   methods: {
-    add() {
-      this.$emit('addClick', 1)
-    }
+    
   },
 }
 </script>

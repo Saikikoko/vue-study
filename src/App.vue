@@ -1,8 +1,7 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <h2>{{count}}</h2>
-    <HelloWorld msg="Welcome to Your Vue.js App" @addClick="addCount($event)"/>
+    <HelloWorld />
   </div>
 </template>
 
@@ -20,10 +19,7 @@ export default {
     HelloWorld
   },
   methods: {
-    addCount() {
-      
-      this.count++
-    }
+    
   },
 }
 </script>
